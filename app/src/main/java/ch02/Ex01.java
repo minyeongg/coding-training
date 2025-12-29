@@ -3,21 +3,26 @@ import java.util.Scanner;
 
 public class Ex01 {
 
-    private static Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
 
-    public static String input() {
+    public String input() {
         System.out.print("What is your name? ");
-        String name = sc.nextLine();
-        return name;
+        return sc.nextLine();
     }
-    public static String concat(String name) {
+    public String concat(String name) {
         return "Hello, " + name + ", nice to meet you!";
     }
-    public static void output() {
+    public void output() {
         System.out.println(concat(input()));
     }
+
+    public void close() {
+        sc.close();
+    }
+
     public static void main(String[] args) {
         Ex01 ex01 = new Ex01();
         ex01.output();
+        ex01.close();
     }
 }
